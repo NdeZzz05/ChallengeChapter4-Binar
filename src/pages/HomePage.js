@@ -67,7 +67,7 @@ export const HomePage = () => {
                       <img src={iconstar} alt="" className="w-[1rem] h-[1rem]"></img>
                       <h6 className="text-white ml-[0.3rem] mr-[1rem] my-[1rem]">{value.vote_average}/10</h6>
                     </div>
-                    <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] mr-[1rem] h-[2.5rem]" onClick={() => navigate(`/detail/${value.id}`)}>
+                    <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] mr-[1rem] h-[2.5rem] hover:scale-110 duration-100" onClick={() => navigate(`/detail/${value.id}`)}>
                       Watch Trailer
                     </button>
                   </div>
@@ -80,7 +80,7 @@ export const HomePage = () => {
       <div className="w-screen h-[42rem] bg-black pt-[5rem]">
         <div className="flex justify-between items-center pb-[2rem]">
           <h2 className="text-white text-[2.5rem] font-bold pl-[6rem]">Popular Movie</h2>
-          <div className="text-[#db0000] pr-[6rem] text-[1rem] font-semibold cursor-pointer" onClick={() => navigate(`/allmovie/${1}`)}>
+          <div className="text-[#db0000] pr-[6rem] text-[1rem] font-semibold cursor-pointer hover:scale-105" onClick={() => navigate(`/allmovie/${1}`)}>
             See All Movie...
           </div>
         </div>
@@ -88,7 +88,7 @@ export const HomePage = () => {
           {Popular.slice(0, 4).map((value) => {
             return (
               <div className="flex flex-wrap w-[16rem] m-auto cursor-pointer" key={value.id} onClick={() => navigate(`/detail/${value.id}`)}>
-                <img src={`https://image.tmdb.org/t/p/original/${value.poster_path}`} alt="" className="w-[15rem] m-auto rounded-md" />
+                <img src={`https://image.tmdb.org/t/p/original/${value.poster_path}`} alt="" className="w-[15rem] m-auto rounded-md hover:scale-105" />
                 <div className="pt-[1rem] pl-[1rem] flex flex-col">
                   <h6 className="text-white text-[1.2rem] font-semibold">{value.original_title}</h6>
                   <p className="text-white font-thin italic">{value.release_date}</p>

@@ -48,16 +48,16 @@ export const DetailsMovie = () => {
             <div className="w-screen h-screen" key={index}>
               <div className="w-screen h-screen flex absolute z-10">
                 <div className="w-1/2 flex justify-center items-center">
-                  <img src={`https://image.tmdb.org/t/p/original/${value.poster_path}`} alt="" className="w-[17rem] rounded-md " />
+                  <img src={`https://image.tmdb.org/t/p/original/${value.poster_path}`} alt="" className="w-[17rem] rounded-md hover:scale-110 duration-700" />
                 </div>
                 <div className="w-1/2 flex flex-col justify-center">
                   <h2 className="font-bold text-[2.5rem] text-white mb-[1rem]">{value.original_title}</h2>
                   <h6 className="font-semibold text-white text-[1rem] mb-[1rem]">{value.release_date}</h6>
                   <p className="text-white mb-[1rem] w-[30rem] leading-6">{value.overview}</p>
                   <span className="flex items-center text-white text-[1rem] mb-[1rem]">
-                    <img src={star} alt="" className="w-[1rem] h-[1rem] mr-[0.5rem]" /> {Math.round(value.vote_average)}/10
+                    <img src={star} alt="" className="w-[1rem] h-[1rem] mr-[0.5rem] " /> {Math.round(value.vote_average)}/10
                   </span>
-                  <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] w-[10rem] h-[2.5rem]" onClick={scrollIntoMovieTrailer}>
+                  <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] w-[10rem] h-[2.5rem] hover:scale-110 duration-100" onClick={scrollIntoMovieTrailer}>
                     Watch Trailer
                   </button>
                 </div>

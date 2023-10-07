@@ -6,7 +6,7 @@ export const Footer = () => {
       <footer className="text-center bg-black">
         <div className="w-screen pt-10">
           <div className="flex justify-center mb-[2.5rem]">
-            <a href="#!" className="mr-9 text-white opacity-80">
+            <a href="#!" className="mr-9 text-white opacity-80 hover:scale-150 duration-100">
               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" className="svg-inline--fa fa-google w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
                 <path
                   fill="currentColor"
@@ -14,7 +14,7 @@ export const Footer = () => {
                 ></path>
               </svg>
             </a>
-            <a href="#!" className="mr-9 text-white opacity-80">
+            <a href="#!" className="mr-9 text-white opacity-80 hover:scale-150 duration-100">
               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram" className="svg-inline--fa fa-instagram w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
                   fill="currentColor"
@@ -22,7 +22,7 @@ export const Footer = () => {
                 ></path>
               </svg>
             </a>
-            <a href="#!" className="mr-9 text-white opacity-80">
+            <a href="#!" className="mr-9 text-white opacity-80 hover:scale-150 duration-100">
               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" className="svg-inline--fa fa-linkedin-in w-3.5" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                 <path
                   fill="currentColor"
@@ -30,7 +30,7 @@ export const Footer = () => {
                 ></path>
               </svg>
             </a>
-            <a href="#!" className="text-white opacity-80">
+            <a href="#!" className="text-white opacity-80 hover:scale-150 duration-100">
               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" className="svg-inline--fa fa-github w-4" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
                 <path
                   fill="currentColor"

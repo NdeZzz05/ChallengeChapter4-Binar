@@ -34,7 +34,7 @@ export const AllMovie = () => {
           {Popular.map((value) => {
             return (
               <div className="m-auto w-[15rem] h-[32rem] cursor-pointer" key={value.id} onClick={() => navigate(`/detail/${value.id}`)}>
-                <img src={`https://image.tmdb.org/t/p/original/${value.poster_path}`} alt="" className="w-[15rem] m-auto rounded-md" />
+                <img src={`https://image.tmdb.org/t/p/original/${value.poster_path}`} alt="" className="w-[15rem] m-auto rounded-md hover:scale-105" />
                 <div className="pt-[1rem] pl-[0.2rem]">
                   <h6 className="text-white text-[1.2rem] font-semibold">{value.original_title}</h6>
                   <p className="text-white font-thin italic">{value.release_date}</p>
