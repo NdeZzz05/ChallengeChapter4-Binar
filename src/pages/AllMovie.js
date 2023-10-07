@@ -3,6 +3,7 @@ import { Navbar } from "../assets/components/Navbar";
 import bgfilm from "../assets/img/bgFilm.jpg";
 import { fetchDataPopular } from "../services/get-data-movie-Popular";
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../assets/components/Footer";
 
 export const AllMovie = () => {
   const [Popular, setPopular] = useState([]);
@@ -42,6 +43,7 @@ export const AllMovie = () => {
             );
           })}
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -3,6 +3,7 @@ import { Navbar } from "../assets/components/Navbar";
 import bgfilm from "../assets/img/bgFilm.jpg";
 import { fetchDataSearch } from "../services/get-data-movie-Search";
 import { useNavigate, useParams } from "react-router-dom";
+import { Footer } from "../assets/components/Footer";
 
 export const SearchMovie = () => {
   const [resultSearch, setResultSearch] = useState([]);
@@ -43,6 +44,7 @@ export const SearchMovie = () => {
             );
           })}
         </div>
+        <Footer />
       </div>
     </>
   );

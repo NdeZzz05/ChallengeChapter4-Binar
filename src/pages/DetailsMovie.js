@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import star from "../assets/img/star.png";
 import { Navbar } from "../assets/components/Navbar";
 import { fetchDataDetails } from "../services/get-data-movie-Details";
 import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { fetchDataVideoDetails } from "../services/get-data-video-Details";
+import { Footer } from "../assets/components/Footer";
 
 export const DetailsMovie = () => {
   const { id } = useParams();
+  const movieTrailerRef = useRef(null);
   const [DetailFilm, setDetailFilm] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
 
@@ -21,6 +23,12 @@ export const DetailsMovie = () => {
     const trailerVideo = data.results.find((video) => video.site === "YouTube" && video.type === "Trailer");
     if (trailerVideo) {
       setTrailerUrl(`https://www.youtube.com/watch?v=${trailerVideo.key}`);
+    }
+  };
+
+  const scrollIntoMovieTrailer = () => {
+    if (movieTrailerRef.current) {
+      movieTrailerRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -49,7 +57,9 @@ export const DetailsMovie = () => {
                   <span className="flex items-center text-white text-[1rem] mb-[1rem]">
                     <img src={star} alt="" className="w-[1rem] h-[1rem] mr-[0.5rem]" /> {Math.round(value.vote_average)}/10
                   </span>
-                  <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] w-[10rem] h-[2.5rem]">Watch Trailer</button>
+                  <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] w-[10rem] h-[2.5rem]" onClick={scrollIntoMovieTrailer}>
+                    Watch Trailer
+                  </button>
                 </div>
               </div>
               {/* Gambar Utama di belakang */}
@@ -59,10 +69,11 @@ export const DetailsMovie = () => {
           );
         })}
       </div>
-      <div className="w-screen bg-black flex flex-col justify-center items-center px-[5rem] pt-[5rem] pb-[2rem]">
+      <div id="movieTrailer" ref={movieTrailerRef} className="w-screen bg-black flex flex-col justify-center items-center px-[5rem] pt-[5rem] pb-[2rem]">
         <h2 className="text-white text-[2.5rem] font-bold pb-[3rem]">Movie Trailer</h2>
         <ReactPlayer url={trailerUrl} width="100%" height="40rem" />
       </div>
+      <Footer />
     </>
   );
 };

@@ -12,6 +12,7 @@ import { fetchDataNowPlaying } from "../services/get-data-movie-NowPlaying";
 import { Navbar } from "../assets/components/Navbar";
 import { fetchDataPopular } from "../services/get-data-movie-Popular";
 import { useNavigate } from "react-router-dom";
+import { Footer } from "../assets/components/Footer";
 
 export const HomePage = () => {
   const [LoadData, setLoadData] = useState([]);
@@ -56,17 +57,19 @@ export const HomePage = () => {
             {LoadData.slice(0, 5).map((value) => {
               return (
                 <SwiperSlide key={value.id}>
-                  <img src={`https://image.tmdb.org/t/p/original/${value.backdrop_path}`} alt="" className="w-screen" />
+                  <img src={`https://image.tmdb.org/t/p/original/${value.backdrop_path}`} alt="" className="bgUtama w-screen" />
                   <div className="absolute inset-[-1px] h-100 bg-gradient-to-b from-transparent to-black top-1/2 transform">
                     <h2 className="text-white text-[3rem] font-bold pt-[2rem]">{value.original_title}</h2>
                     <div className="flex justify-center items-center">
                       <p className="text-white w-[40rem] opacity-70 font-extralight">{value.overview}</p>
                     </div>
                     <div className="flex justify-center items-center mr-[0.5rem]">
-                      <img src={iconstar} alt="" className="w-[1rem] h-[1rem] mr-[0.3rem] mb-[0.2rem] !important"></img>
-                      <h6 className="text-white mr-[1rem] my-[1rem]">{value.vote_average}/10</h6>
+                      <img src={iconstar} alt="" className="w-[1rem] h-[1rem]"></img>
+                      <h6 className="text-white ml-[0.3rem] mr-[1rem] my-[1rem]">{value.vote_average}/10</h6>
                     </div>
-                    <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] mr-[1rem] h-[2.5rem]">Watch Trailer</button>
+                    <button className="border border-red-700 text-white bg-red-700 font-semibold rounded-full px-[1rem] mr-[1rem] h-[2.5rem]" onClick={() => navigate(`/detail/${value.id}`)}>
+                      Watch Trailer
+                    </button>
                   </div>
                 </SwiperSlide>
               );
@@ -95,6 +98,7 @@ export const HomePage = () => {
           })}
         </div>
       </div>
+      <Footer />
     </>
   );
 };
