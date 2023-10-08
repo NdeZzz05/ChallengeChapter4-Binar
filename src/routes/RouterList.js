@@ -15,7 +15,7 @@ export const RouterList = () => {
         <Route path="/" element={<HomePage />}></Route>
         {/* INI nomor rumah spesifik */}
         <Route path="/detail/:id" element={<DetailsMovie />}></Route>
-        <Route path="/allmovie/:page" element={<AllMovie />}></Route>
+        <Route path="/allmovie" element={<AllMovie />}></Route>
         <Route path="/search/:query" element={<SearchMovie />}></Route>
       </Routes>
     </BrowserRouter>

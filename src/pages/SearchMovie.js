@@ -29,7 +29,7 @@ export const SearchMovie = () => {
             <h2 className="text-white text-[2.5rem] font-bold flex justify-center items-center pl-[6rem]">Search Result "{query}"</h2>
           </div>
           <img src={bgfilm} alt="" className="w-screen h-full object-cover"></img>
-          <div className="absolute inset-[1px] h-100 bg-gradient-to-b from-transparent to-black bottom-1/2 transform"></div>
+          <div className="absolute inset-[-2px] h-100 bg-gradient-to-b from-transparent to-black bottom-1/2 transform"></div>
         </div>
         <div className="w-screen bg-black flex flex-wrap">
           {resultSearch.map((value) => {

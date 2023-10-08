@@ -80,7 +80,7 @@ export const HomePage = () => {
       <div className="w-screen h-[42rem] bg-black pt-[5rem]">
         <div className="flex justify-between items-center pb-[2rem]">
           <h2 className="text-white text-[2.5rem] font-bold pl-[6rem]">Popular Movie</h2>
-          <div className="text-[#db0000] pr-[6rem] text-[1rem] font-semibold cursor-pointer hover:scale-105" onClick={() => navigate(`/allmovie/${1}`)}>
+          <div className="text-[#db0000] pr-[6rem] text-[1rem] font-semibold cursor-pointer hover:scale-105" onClick={() => navigate(`/allmovie`)}>
             See All Movie...
           </div>
         </div>
